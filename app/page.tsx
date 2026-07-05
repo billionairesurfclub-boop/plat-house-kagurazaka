@@ -12,7 +12,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
           <div>
             <p className="text-xs text-gray-500">Plat House</p>
-            <h1 className="text-lg font-bold text-gray-900">渋谷Ⅲ（神泉）</h1>
+            <h1 className="text-lg font-bold text-gray-900">西新宿5丁目</h1>
           </div>
           <nav className="hidden md:flex gap-6 text-sm text-gray-600">
             <a href="#rooms" className="hover:text-gray-900">客室</a>
@@ -29,10 +29,10 @@ export default function Home() {
       <main>
         <section className="bg-gray-50 py-20 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm text-gray-500 mb-3">Shinsen · Shibuya-ku Tokyo</p>
+            <p className="text-sm text-gray-500 mb-3">Nishi-Shinjuku 5-chome · Tokyo</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">{hotel.catchcopy.ja}</h2>
-            <p className="text-gray-600 text-lg mb-4">渋谷駅徒歩5分・神泉駅徒歩3分。Netflix・Disney+・浴槽・キッチン完備の80㎡プライベート空間。</p>
-            <p className="text-gray-500 text-base mb-8">ドラム式洗濯機・ボタニスト・空気清浄機・リビング・ダイニング完備。グループ・ファミリー旅行に最適。</p>
+            <p className="text-gray-600 text-lg mb-4">西新宿5丁目駅徒歩3分・西新宿駅徒歩10分。4つの客室タイプから選べる快適な民泊。</p>
+            <p className="text-gray-500 text-base mb-8">Netflix・Nintendo Switch・キッチン・ボタニスト・翻訳機完備。新宿観光の拠点に最適。</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="#booking" className="bg-gray-900 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-700 transition">今すぐ予約する</a>
               <a href="#rooms" className="border border-gray-300 text-gray-700 px-8 py-3 rounded-full text-base hover:bg-gray-50 transition">客室を見る</a>
@@ -43,10 +43,10 @@ export default function Home() {
 
         <section className="py-10 px-4 bg-white border-b border-gray-100">
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div className="p-4"><p className="text-3xl font-bold text-gray-900">最大6名</p><p className="text-sm text-gray-500 mt-1">グループ利用OK</p></div>
-            <div className="p-4"><p className="text-3xl font-bold text-gray-900">80㎡</p><p className="text-sm text-gray-500 mt-1">広々プライベート空間</p></div>
-            <div className="p-4"><p className="text-3xl font-bold text-gray-900">徒歩3分</p><p className="text-sm text-gray-500 mt-1">神泉駅から</p></div>
-            <div className="p-4"><p className="text-3xl font-bold text-gray-900">徒歩5分</p><p className="text-sm text-gray-500 mt-1">渋谷駅から</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">4室</p><p className="text-sm text-gray-500 mt-1">選べる客室タイプ</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">最大8名</p><p className="text-sm text-gray-500 mt-1">グループ利用OK</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">徒歩3分</p><p className="text-sm text-gray-500 mt-1">西新宿5丁目駅</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">新宿</p><p className="text-sm text-gray-500 mt-1">徒歩圏内</p></div>
           </div>
         </section>
 
@@ -66,8 +66,8 @@ export default function Home() {
 
         <section id="rooms" className="py-14 px-4 bg-gray-50">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">客室</h2>
-            <p className="text-center text-gray-500 mb-10">2つの客室で最大6名。グループもカップルも快適にお過ごしいただけます。</p>
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">客室タイプ</h2>
+            <p className="text-center text-gray-500 mb-10">30㎡・35㎡の4タイプ。ご人数・ご用途に合わせてお選びください。</p>
             <div className="grid md:grid-cols-2 gap-6">
               {rooms.map((room) => (
                 <div key={room.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
@@ -121,7 +121,7 @@ export default function Home() {
           <section className="py-14 px-4 bg-white">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">旅行・観光ガイド</h2>
-              <p className="text-center text-gray-500 mb-10">渋谷・神泉エリアの最新情報</p>
+              <p className="text-center text-gray-500 mb-10">新宿・西新宿エリアの最新情報</p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 {latestPosts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`}>
@@ -158,13 +158,13 @@ export default function Home() {
 
         <section id="booking" className="py-20 px-4 bg-gray-900 text-white">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-3">渋谷駅5分。80㎡の広々空間で最大6名が快適に</h2>
+            <h2 className="text-2xl font-bold mb-3">西新宿5丁目駅3分。4客室・最大8名で新宿を満喫</h2>
             <p className="text-gray-400 mb-2">OTAより安い公式直接予約 · 最安値保証 · 7日前まで無料キャンセル</p>
             <p className="text-gray-500 text-sm mb-8">チェックイン {hotel.checkIn} · チェックアウト {hotel.checkOut} · {hotel.cancelPolicy}</p>
             <div className="bg-gray-800 rounded-2xl p-6 mb-6">
               <p className="text-3xl font-bold mb-1">¥{hotel.price.min.toLocaleString()}〜</p>
-              <p className="text-gray-400 text-sm">1泊あたり（税込）+ 清掃費別途 · 最大6名</p>
-              <p className="text-gray-500 text-xs mt-2">6名利用時 1人あたり約¥{Math.floor(hotel.price.min / 6).toLocaleString()}〜</p>
+              <p className="text-gray-400 text-sm">1泊あたり（税込）+ 清掃費別途</p>
+              <p className="text-gray-500 text-xs mt-2">1室から予約可 · 最大8名（4室利用時）</p>
             </div>
             <a href={hotel.bookingUrl} target="_blank" className="inline-block bg-white text-gray-900 px-10 py-4 rounded-full text-base font-bold hover:bg-gray-100 transition">今すぐ最安値で予約する</a>
           </div>
