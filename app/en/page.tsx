@@ -1,0 +1,210 @@
+import Image from "next/image";
+import Link from "next/link";
+import { hotel, amenities, rooms, faqs } from "@/data/hotel";
+import { getAllPosts } from "@/lib/blog";
+
+export default function HomeEn() {
+  const highlights = amenities.filter((a) => a.highlight);
+  const latestPosts = getAllPosts().filter(p => p.lang === "en").slice(0, 3);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div>
+            <p className="text-xs text-gray-500">Plat House</p>
+            <h1 className="text-lg font-bold text-gray-900">Shirokanedai</h1>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm text-gray-600">
+            <a href="#rooms" className="hover:text-gray-900">Rooms</a>
+            <a href="#amenities" className="hover:text-gray-900">Amenities</a>
+            <a href="#access" className="hover:text-gray-900">Access</a>
+            <a href="#faq" className="hover:text-gray-900">FAQ</a>
+            <Link href="/" className="hover:text-gray-900">日本語</Link>
+          </nav>
+          <a href="#booking" className="bg-gray-900 text-white text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition">Book Now</a>
+        </div>
+      </header>
+
+      <main>
+        <section className="bg-gray-50 py-20 px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm text-gray-500 mb-3">Shirokanedai · Minato-ku Tokyo</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">{hotel.catchcopy.en}</h2>
+            <p className="text-gray-600 text-lg mb-4">Up to 11 guests · 2 free parking spots · Netflix · Disney+ · Nintendo Switch.</p>
+            <p className="text-gray-500 text-base mb-8">2-min walk from Shirokanedai Station. Entire 3-story house, all yours.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="#booking" className="bg-gray-900 text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-700 transition">Book Now</a>
+              <a href="#rooms" className="border border-gray-300 text-gray-700 px-8 py-3 rounded-full text-base hover:bg-gray-50 transition">View Rooms</a>
+            </div>
+            <p className="text-sm text-gray-500 mt-4">Best price guarantee · Free cancellation up to 7 days before</p>
+          </div>
+        </section>
+
+        <section className="py-10 px-4 bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">11</p><p className="text-sm text-gray-500 mt-1">Max Guests</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">3F</p><p className="text-sm text-gray-500 mt-1">Entire House</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">80㎡</p><p className="text-sm text-gray-500 mt-1">Spacious Living</p></div>
+            <div className="p-4"><p className="text-3xl font-bold text-gray-900">2</p><p className="text-sm text-gray-500 mt-1">Free Parking</p></div>
+          </div>
+        </section>
+
+        <section className="py-14 px-4 bg-white">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">Premium Amenities</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {highlights.map((item) => (
+                <div key={item.nameEn} className="flex flex-col items-center p-5 bg-gray-50 rounded-2xl text-center">
+                  <span className="text-3xl mb-2">{item.icon}</span>
+                  <span className="text-sm font-medium text-gray-800">{item.nameEn}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="rooms" className="py-14 px-4 bg-gray-50">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">Rooms & Layout</h2>
+            <p className="text-center text-gray-500 mb-10">3-story house with bedrooms, living room, and service room.</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {rooms.map((room) => (
+                <div key={room.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image src={`/${room.images[0]}`} alt={`${room.name.en} - Plat House Shirokanedai ${room.bedType.en} up to ${room.maxGuests} guests`} fill className="object-cover" />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-bold text-gray-900">{room.name.en}</h3>
+                      <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{room.floor}</span>
+                    </div>
+                    <p className="text-sm text-gray-500 mb-3">{room.bedType.en} · Up to {room.maxGuests} guests</p>
+                    <p className="text-sm text-gray-600">{room.description.en}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 px-4 bg-gray-50">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">Gallery</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { src: "/shiro-gaikan-01.jpg", alt: "Plat House Shirokanedai exterior entire house rental Tokyo" },
+                { src: "/shiro-living-01.jpg", alt: "Plat House Shirokanedai spacious living room for groups" },
+                { src: "/shiro-living-02.jpg", alt: "Plat House Shirokanedai living area Netflix Disney Plus" },
+                { src: "/shiro-bedroom1-01.jpg", alt: "Plat House Shirokanedai bedroom 1 comfortable beds" },
+                { src: "/shiro-bedroom2-01.jpg", alt: "Plat House Shirokanedai bedroom 2 family accommodation" },
+                { src: "/shiro-bedroom3-01.jpg", alt: "Plat House Shirokanedai bedroom 3 group stay Tokyo" },
+                { src: "/shiro-kitchen-01.jpg", alt: "Plat House Shirokanedai full kitchen self-catering" },
+                { src: "/shiro-bath-01.jpg", alt: "Plat House Shirokanedai bathroom clean modern" },
+                { src: "/shiro-living-03.jpg", alt: "Plat House Shirokanedai cozy living space" },
+              ].map((img) => (
+                <div key={img.src} className="relative h-48 rounded-2xl overflow-hidden">
+                  <Image src={img.src} alt={img.alt} fill className="object-cover" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-3">
+                    <p className="text-white text-xs font-medium">{img.alt.split("Plat House Shirokanedai ")[1]}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="amenities" className="py-14 px-4 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">All Amenities</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {amenities.map((item) => (
+                <div key={item.nameEn} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50">
+                  <span className="text-xl">{item.icon}</span>
+                  <span className="text-sm text-gray-700">{item.nameEn}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="access" className="py-14 px-4 bg-gray-50">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">Access</h2>
+            <div className="bg-white rounded-2xl p-6 mb-6">
+              <p className="font-medium text-gray-900 mb-1">{hotel.name.en}</p>
+              <p className="text-gray-600 text-sm mb-4">{hotel.address.en}</p>
+              <div className="space-y-3">
+                {hotel.access.map((a) => (
+                  <div key={a.station} className="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+                    <span className="text-xl">🚉</span>
+                    <div>
+                      <p className="font-medium text-sm text-gray-900">{a.station} {a.walk}-min walk</p>
+                      <p className="text-xs text-gray-500">{a.line}</p>
+                    </div>
+                  </div>
+                ))}
+                <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+                  <span className="text-xl">🚗</span>
+                  <div>
+                    <p className="font-medium text-sm text-gray-900">Free Parking (2 cars)</p>
+                    <p className="text-xs text-gray-500">On-site parking on 1st floor</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden h-64">
+              <iframe
+                title="Plat House Shirokanedai Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1785.1214027365631!2d139.72320839062888!3d35.638570698178256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b045db388d3%3A0x1b3e70eedb30d622!2z44CSMTA4LTAwNzEg5p2x5Lqs6YO95riv5Yy655m96YeR5Y-w77yU5LiB55uu77yR77yW4oiS77yV!5e0!3m2!1sen!2sjp!4v1781947368421!5m2!1sen!2sjp"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="py-14 px-4 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div key={i} className="border border-gray-100 rounded-2xl p-5">
+                  <p className="font-medium text-gray-900 mb-2">Q. {faq.q.en}</p>
+                  <p className="text-gray-600 text-sm">A. {faq.a.en}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="booking" className="py-20 px-4 bg-gray-900 text-white">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-3">Your Private Tokyo Home</h2>
+            <p className="text-gray-500 mb-2">Best price guarantee · Free cancellation up to 7 days before</p>
+            <p className="text-gray-500 text-sm mb-8">Check-in {hotel.checkIn} · Check-out {hotel.checkOut} · {hotel.cancelPolicy}</p>
+            <div className="bg-gray-800 rounded-2xl p-6 mb-6">
+              <p className="text-3xl font-bold mb-1">¥{hotel.price.min.toLocaleString()}〜</p>
+              <p className="text-gray-500 text-sm">per night (tax included) · Up to 11 guests</p>
+              <p className="text-gray-500 text-xs mt-2">From ~¥3,636 per person (11 guests)</p>
+            </div>
+            <a href={hotel.bookingUrl} target="_blank" className="inline-block bg-white text-gray-900 px-10 py-4 rounded-full text-base font-bold hover:bg-gray-100 transition">Book at Best Price</a>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-gray-900 border-t border-gray-800 py-8 px-4">
+        <div className="max-w-5xl mx-auto text-center text-gray-500 text-sm">
+          <p className="mb-2">{hotel.name.en}</p>
+          <p className="mb-2">{hotel.address.en}</p>
+          <p className="mb-4">TEL: {hotel.phone}</p>
+          <p>© 2025 PlanPlan LLC. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}

@@ -1,0 +1,171 @@
+export const hotel = {
+  id: "plat-house-nishishinjuku",
+  name: {
+    ja: "ぷらっとハウス西新宿",
+    en: "Plat House Nishi-Shinjuku",
+  },
+  catchcopy: {
+    ja: "新宿徒歩圏内。130㎡の広々一棟貸し切り、6つの寝室で大人数も快適",
+    en: "Spacious 130㎡ Private House near Shinjuku. 6 Bedrooms for Families & Groups.",
+  },
+  address: {
+    postalCode: "160-0023",
+    ja: "東京都新宿区西新宿4-23-10",
+    en: "4-23-10 Nishi-Shinjuku, Shinjuku-ku, Tokyo 160-0023",
+  },
+  area: "新宿・西新宿",
+  phone: "08070583086",
+  category: "一棟貸し切り（戸建）",
+  website: "https://nishishinjuku.plat-house.jp",
+  checkIn: "16:00",
+  checkOut: "11:00",
+  price: {
+    min: 40000,
+    max: 70000,
+    currency: "JPY",
+  },
+  cancelPolicy: "7日前まで無料キャンセル可能",
+  languages: ["ja", "en"],
+  googleMapUrl: "",
+  bookingUrl: "https://beds24.com/booking.php?propid=257190&referer=BookingLink",
+  rating: {
+    google: 0,
+    bookingCom: 0,
+  },
+  access: [
+    { station: "西新宿５丁目駅", line: "都営大江戸線", walk: 10 },
+    { station: "初台駅", line: "京王新線", walk: 10 },
+    { station: "新宿駅", line: "JR各線・各私鉄・地下鉄", walk: 20 },
+  ],
+  floors: "3階建て（1F・3F各3部屋）",
+  parking: 0,
+  capacity: 14,
+  size: 130,
+};
+
+export const amenities = [
+  { name: "パソコン", nameEn: "PC", icon: "💻", highlight: true },
+  { name: "Netflix", nameEn: "Netflix", icon: "🎬", highlight: true },
+  { name: "Nintendo Switch", nameEn: "Nintendo Switch", icon: "🎮", highlight: true },
+  { name: "VRヘッドセット", nameEn: "VR Headset", icon: "🥽", highlight: true },
+  { name: "ポケットWi-Fi", nameEn: "Pocket Wi-Fi", icon: "📶", highlight: true },
+  { name: "10ギガ高速インターネット", nameEn: "10Gbps Internet", icon: "🌐", highlight: true },
+  { name: "ドラム式洗濯機", nameEn: "Drum Washing Machine", icon: "🫧", highlight: true },
+  { name: "シモンズ・日本ベッド", nameEn: "Simmons & Nippon Bed", icon: "🛏️", highlight: true },
+  { name: "冷蔵庫", nameEn: "Refrigerator", icon: "🧊", highlight: false },
+  { name: "電子レンジ", nameEn: "Microwave", icon: "♨️", highlight: false },
+  { name: "電気ケトル", nameEn: "Electric Kettle", icon: "☕", highlight: false },
+  { name: "エアコン", nameEn: "Air Conditioning", icon: "❄️", highlight: false },
+  { name: "大型TV", nameEn: "Large TV", icon: "📺", highlight: false },
+  { name: "シャワー", nameEn: "Shower", icon: "🚿", highlight: false },
+  { name: "独立トイレ", nameEn: "Separate Toilet", icon: "🚽", highlight: false },
+  { name: "ウォシュレット", nameEn: "Washlet", icon: "✨", highlight: false },
+  { name: "ヘアドライヤー", nameEn: "Hair Dryer", icon: "💨", highlight: false },
+  { name: "コテ＆カールアイロン", nameEn: "Curling Iron", icon: "💅", highlight: false },
+];
+
+export const rooms = [
+  {
+    id: "room-1f-a",
+    floor: "1F",
+    name: { ja: "寝室A（クイーン）", en: "Bedroom A (Queen)" },
+    bedType: { ja: "クイーンベッド", en: "Queen Bed" },
+    maxGuests: 2,
+    description: {
+      ja: "1階の落ち着いた寝室。クイーンサイズベッドでゆったりとお休みいただけます。",
+      en: "A calm first floor bedroom with a comfortable queen-size bed.",
+    },
+    images: [],
+  },
+  {
+    id: "room-1f-b",
+    floor: "1F",
+    name: { ja: "寝室B（ダブル×2）", en: "Bedroom B (Double x2)" },
+    bedType: { ja: "ダブルベッド×2", en: "2 Double Beds" },
+    maxGuests: 4,
+    description: {
+      ja: "1階のファミリールーム。ダブルベッド2台で最大4名様までご宿泊いただけます。",
+      en: "First floor family room with 2 double beds, accommodating up to 4 guests.",
+    },
+    images: [],
+  },
+  {
+    id: "room-1f-c",
+    floor: "1F",
+    name: { ja: "寝室C（ダブル）", en: "Bedroom C (Double)" },
+    bedType: { ja: "ダブルベッド", en: "Double Bed" },
+    maxGuests: 2,
+    description: {
+      ja: "1階のシンプルな寝室。ダブルベッドでゆったりとお過ごしいただけます。",
+      en: "A simple first floor bedroom with a double bed.",
+    },
+    images: [],
+  },
+  {
+    id: "room-3f-d",
+    floor: "3F",
+    name: { ja: "寝室D（クイーン）", en: "Bedroom D (Queen)" },
+    bedType: { ja: "クイーンベッド", en: "Queen Bed" },
+    maxGuests: 2,
+    description: {
+      ja: "3階の寝室。クイーンサイズベッドと開放的な空間が自慢のお部屋です。",
+      en: "Third floor bedroom with a queen-size bed and open, airy atmosphere.",
+    },
+    images: [],
+  },
+  {
+    id: "room-3f-e",
+    floor: "3F",
+    name: { ja: "寝室E（クイーン）", en: "Bedroom E (Queen)" },
+    bedType: { ja: "クイーンベッド", en: "Queen Bed" },
+    maxGuests: 2,
+    description: {
+      ja: "3階の明るい寝室。クイーンサイズベッドで快適にお休みいただけます。",
+      en: "A bright third floor bedroom with a queen-size bed.",
+    },
+    images: [],
+  },
+  {
+    id: "room-3f-f",
+    floor: "3F",
+    name: { ja: "寝室F（クイーン）", en: "Bedroom F (Queen)" },
+    bedType: { ja: "クイーンベッド", en: "Queen Bed" },
+    maxGuests: 2,
+    description: {
+      ja: "3階の静かな寝室。ゆっくりとお休みいただける落ち着いた空間です。",
+      en: "A quiet third floor bedroom with a queen-size bed.",
+    },
+    images: [],
+  },
+];
+
+export const faqs = [
+  {
+    q: { ja: "チェックインは何時ですか？", en: "What time is check-in?" },
+    a: { ja: "チェックインは16時、チェックアウトは11時です。セルフチェックイン対応のため、深夜・早朝でも安心です。", en: "Check-in is at 16:00, check-out is at 11:00. Self check-in is available anytime." },
+  },
+  {
+    q: { ja: "何名まで宿泊できますか？", en: "How many guests can stay?" },
+    a: { ja: "6つの寝室で最大14名様までご宿泊いただけます。大人数のご家族・グループ旅行に最適です。", en: "Up to 14 guests across 6 bedrooms. Perfect for large families and group trips." },
+  },
+  {
+    q: { ja: "一棟まるごと借りられますか？", en: "Can we rent the entire house?" },
+    a: { ja: "はい、130㎡の一棟をまるごと貸し切りでご利用いただけます。他のお客様との共用スペースはありません。", en: "Yes, the entire 130㎡ house is exclusively yours. No shared spaces with other guests." },
+  },
+  {
+    q: { ja: "新宿からのアクセスはどのくらいですか？", en: "How far is it from Shinjuku?" },
+    a: { ja: "西新宿５丁目駅・初台駅から徒歩約10分です。新宿の観光・グルメ・ショッピングへのアクセスも抜群です。", en: "About 10 minutes walk from Nishi-Shinjuku 5-chome and Hatsudai stations. Great access to Shinjuku sightseeing and shopping." },
+  },
+  {
+    q: { ja: "駐車場はありますか？", en: "Is there parking?" },
+    a: { ja: "専用駐車場はございません。近隣のコインパーキングをご利用ください。", en: "There is no on-site parking. Please use nearby coin parking facilities." },
+  },
+  {
+    q: { ja: "キャンセルポリシーを教えてください。", en: "What is the cancellation policy?" },
+    a: { ja: "ご予約日の7日前まで無料でキャンセルいただけます。", en: "Free cancellation is available up to 7 days before check-in." },
+  },
+  {
+    q: { ja: "VRヘッドセットは使えますか？", en: "Is there a VR headset?" },
+    a: { ja: "はい、VRヘッドセットを無料でご利用いただけます。非日常的な体験をお楽しみください。", en: "Yes, a VR headset is available for free. Enjoy an immersive experience during your stay." },
+  },
+];
