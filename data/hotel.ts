@@ -77,7 +77,18 @@ export const rooms = [
       ja: "80㎡の広々とした1LDK。ダブルベッド2台・ダブル布団セット2組・ダブルソファーベッド2台で最大10名様が快適にお過ごしいただけます。リビング・キッチン・浴槽完備。",
       en: "A spacious 80㎡ 1LDK with 2 double beds, 2 double futon sets, and 2 double sofa beds. Living room, kitchen, and bathtub included. Up to 10 guests.",
     },
-    images: [],
+    images: [
+    "/images/photo-01.jpg",
+    "/images/photo-02.jpg",
+    "/images/photo-03.jpg",
+    "/images/photo-04.jpg",
+    "/images/photo-05.jpg",
+    "/images/photo-06.jpg",
+    "/images/photo-07.jpg",
+    "/images/photo-08.jpg",
+    "/images/photo-09.jpg",
+    "/images/photo-10.jpg"
+  ],
   },
 ];
 
