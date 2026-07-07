@@ -9,6 +9,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "gXHCgYW1liWYzDHLdMnZqsms3IllJliPGWeecgZRK5E",
+  },
   title: "ぷらっとハウス神楽坂 | 神楽坂駅1分 80㎡1LDK 最大10名 民泊",
   description:
     "神楽坂駅（東京メトロ東西線）徒歩1分。80㎡の広々とした1LDKで最大10名。Netflix・Nintendo Switch・キッチン・浴槽・ソファー・ボタニスト完備。グループ・ファミリー旅行に最適。",
