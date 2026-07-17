@@ -14,6 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | ぷらっとハウス神楽坂`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://kagurazaka.plat-house.jp/blog/${slug}`,
+    },
   };
 }
 
